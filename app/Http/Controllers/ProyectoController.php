@@ -12,4 +12,11 @@ class ProyectoController extends Controller
 
     	return view('proyectos.Proyectos',['proyectos'=>$proyectos]);
     }
+    public function show($id){
+
+    	$proyectos=Proyecto::where('id',$id)->get();
+
+    	return view('proyectos/Proyecto')->with(['proyectos'=>$proyectos]);
+
+    }
 }

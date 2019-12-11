@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Departamento</title>
-</head>
-<body>
-
-
+@include('layouts.navbar')
 
   <h2>Empleado</h2>
 

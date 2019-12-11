@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Proyecto extends Model
 {
     
-    
+    public function Empleado()
+    {
+        return $this->hasOne('App\Empleado');
+    }
 }

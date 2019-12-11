@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Empleado</title>
-</head>
-<body>
-
+@include('layouts.navbar')
 
 
   <h2>Empleado</h2>
@@ -16,8 +10,7 @@
       <li>Nombre: {{$empleado->nombre}}</li>
       <li>Email: {{$empleado->email}}</li>
       <li>Telefono: {{$empleado->telefono}}</li>
-      </ul>
-        
+      <li>id del proyecto: {{$empleado->proyecto_id}}</li> 
       @endforeach
 
     
