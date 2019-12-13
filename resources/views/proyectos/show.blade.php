@@ -3,7 +3,7 @@
 
   <h2>Proyecto</h2>
 
-  @foreach ($proyectos as $proyecto)
+
 
     <ul>
         <li>Id: {{$proyecto->id}}</li>
@@ -14,8 +14,7 @@
         <li>Horas estimadas: {{$proyecto->horasestimadas}}</li>
         <li>Id de empleado: {{$proyecto -> empleado_id}}</li>
       </ul>
-        
-      @endforeach
+
 
     
 

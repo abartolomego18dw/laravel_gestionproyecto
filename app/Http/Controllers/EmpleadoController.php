@@ -16,7 +16,7 @@ class EmpleadoController extends Controller
 
     	$empleados=Empleado::where('id',$id)->get();
 
-    	return view('empleados/Empleado')->with(['empleados'=>$empleados]);
+    	return view('empleados/show')->with(['empleados'=>$empleados]);
 
     }
 }

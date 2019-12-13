@@ -11,11 +11,9 @@ class DepartamentoSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0;$i<20;$i++) {
+        for ($i=0;$i<3;$i++) {
        	DB::table('departamentos')->insert([
-                'nombre' => Str::random(10)
-                
-                
+                'nombre' => Str::random(10)       
                   ]);
         }
     }

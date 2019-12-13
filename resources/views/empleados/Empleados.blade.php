@@ -11,11 +11,11 @@
       </tr>
       @foreach ($empleados as $empleado)
       <tr>
-        <td><a href="{{route('empleado',$empleado->id)}}">{{$empleado->id}}</a></td>
+        <td><a href="{{route('empleados.show',$empleado->id)}}">{{$empleado->id}}</a></td>
         <td>{{$empleado->nombre}}</td>
         <td>{{$empleado->email}}</td>
         <td>{{$empleado->telefono}}</td>
-        <td><a href="{{route('proyecto',$empleado->proyecto_id)}}">{{$empleado->proyecto_id}}</a></td>
+        <td><a href="{{route('proyectos.show', $empleado->proyecto->id)}}">{{$empleado->proyecto->nombre}}</a></td>
       </tr>
       @endforeach
 
