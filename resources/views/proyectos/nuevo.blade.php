@@ -4,24 +4,24 @@
 
     <form action="{{route('proyectos.store')}}" method="post">
     @csrf
-        <p>Nombre: <input type="text" name="nombre" placeholder="andoni" value="{{old('nombre')}}">
+        <p>Nombre: <input type="text" name="nombre">
        
         </p>
-        <p>Titulo: <input type="text" name="titulo" placeholder="" value="{{old('titulo')}}">
+        <p>Titulo: <input type="text" name="titulo">
         
         </p>
-        <p>Fecha inicio: <input type="date" name="fechaIni" value="yyyy-mm-dd" placeholder="fecha-ini" value="{{old('fechaIni')}}">
+        <p>Fecha inicio: <input type="date" name="fechaIni" value="yyyy-mm-dd" placeholder="fecha-ini">
         
         </p>
-        <p>Fecha fin: <input type="date" name="fechaFin" value="yyyy-mm-dd" placeholder="fecha-fin" value="{{old('fechaFin')}}">
+        <p>Fecha fin: <input type="date" name="fechaFin" value="yyyy-mm-dd" placeholder="fecha-fin">
         
         </p>
-        <p>Horas estimadas: <input type="number" name="horas" value="" placeholder="horas estimadas" value="{{old('fechaFin')}}">
+        <p>Horas estimadas: <input type="number" name="horas" value="" placeholder="horas estimadas">
         
         </p>
         
         </p>
-        <p>Empleado respondable: <input type="text" name="empleado" value="empleado" placeholder="{{'empleado_id'}}" value="{{'empleado_id')}">
+        <p>Empleado respondable: <input type="text" name="empleado" value="empleado">
         
         </p>
         <p>

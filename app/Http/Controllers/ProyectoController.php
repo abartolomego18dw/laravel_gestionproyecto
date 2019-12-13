@@ -40,6 +40,15 @@ class ProyectoController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre' => 'required',
+            'titulo' => 'required',
+            'fechainIni' => 'required|date',
+            'fechaFin' => 'required|date',
+            'horas' => 'required|numeric',
+            'empleado' => 'required|numeric'
+        ]);
+
         $proyectos = Proyecto::all();
         $proyecto = new Proyecto;
         $proyecto -> nombre = $request -> input('nombre');
@@ -87,6 +96,15 @@ class ProyectoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'nombre' => 'required',
+            'titulo' => 'required',
+            'fechainIni' => 'required|date',
+            'fechaFin' => 'required|date',
+            'horas' => 'required|numeric',
+            'empleado' => 'required|numeric'
+        ]);
+
         $proyecto = Proyecto::find($id);
         $empleados = Empleado::all();
         $proyecto -> nombre = $request -> input('nombre');
