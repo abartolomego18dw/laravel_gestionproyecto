@@ -1,16 +1,12 @@
 @include('layouts.navbar')
 
 <h2><b>Insertar proyecto</b></h2>
-<form action="{{route('proyectos.edit', $proyecto->id)}}" method="post">
+<form action="{{route('proyectos.update', $proyecto->id)}}" method="post">
     @method('PUT')
     @csrf
     <p>Nombre: <input type="text" name="nombre" placeholder="{{$proyecto->nombre}}" value="{{$proyecto->nombre}}" readonly></p>
     <p>Titulo: <input type="text" name="titulo" placeholder="{{$proyecto->titulo}}" value="{{$proyecto->titulo}}">
-        @if ($errors->has('titulo'))
-        <label class="error">
-            {{$errors->first('titulo')}}
-        </label>
-        @endif
+        
     </p>
     <p>Fecha de inicio: <input type="date" name="fechaInicio" placeholder="{{$proyecto->fechainicio}}" value="{{$proyecto->fechainicio}}">
         

@@ -20,7 +20,7 @@
         <td>{{$proyecto->fechainicio}}</td>
         <td>{{$proyecto->fechafin}}</td>
         <td>{{$proyecto->horasestimadas}}</td>
-        <td><a href="{{route('empleados.show', $proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}</td>
+        <td><a href="{{route('empleados.show', $proyecto->empleado_id)}}">{{$proyecto->empleado_id}}</td>
         <td><form action="{{route('proyectos.edit', $proyecto->id)}}" method="get">
         @csrf
         <input type="submit" value="Editar">

@@ -27,6 +27,7 @@ class ProyectoController extends Controller
      */
     public function create()
     {
+        
         $empleados = Empleado::all();
         return view('proyectos.nuevo')->with(['empleados' => $empleados]);
     }
@@ -39,7 +40,16 @@ class ProyectoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $proyectos = Proyecto::all();
+        $proyecto = new Proyecto;
+        $proyecto -> nombre = $request -> input('nombre');
+        $proyecto -> titulo = $request -> input('titulo');
+        $proyecto -> fechainicio = $request -> input('fechaIni');
+        $proyecto -> fechafin = $request -> input('fechaFin');
+        $proyecto -> horasestimadas = $request -> input('horas');
+        $proyecto -> empleado_id = $request -> input('empleado');
+        $proyecto -> save();
+        return view('proyectos.Proyectos',['proyectos'=>$proyectos]);
     }
 
     /**
@@ -77,7 +87,17 @@ class ProyectoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $proyecto = Proyecto::find($id);
+        $empleados = Empleado::all();
+        $proyecto -> nombre = $request -> input('nombre');
+        $proyecto -> titulo = $request -> input('titulo');
+        $proyecto -> fechainicio = $request -> input('fechaInicio');
+        $proyecto -> fechafin = $request -> input('fechaFin');
+        $proyecto -> horasestimadas = $request -> input('horas');
+        $proyecto -> empleado->nombre = $request -> input('empleado');
+        $proyecto -> save();
+        return view('proyectos.show')->with(['proyecto' => $proyecto, 'empleados' => $empleados]);
+
     }
 
     /**

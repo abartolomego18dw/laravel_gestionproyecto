@@ -1,4 +1,6 @@
- <h2><b>Insertar proyecto</b></h2>
+
+@include('layouts.navbar') 
+<h2><b>Insertar proyecto</b></h2>
 
     <form action="{{route('proyectos.store')}}" method="post">
     @csrf
@@ -14,9 +16,12 @@
         <p>Fecha fin: <input type="date" name="fechaFin" value="yyyy-mm-dd" placeholder="fecha-fin" value="{{old('fechaFin')}}">
         
         </p>
+        <p>Horas estimadas: <input type="number" name="horas" value="" placeholder="horas estimadas" value="{{old('fechaFin')}}">
         
         </p>
-        <p>Empleado respondable: <input type="text" name="empleado" value="empleado" placeholder="{{'empleado'}}" value="{{'empleado')}">
+        
+        </p>
+        <p>Empleado respondable: <input type="text" name="empleado" value="empleado" placeholder="{{'empleado_id'}}" value="{{'empleado_id')}">
         
         </p>
         <p>
