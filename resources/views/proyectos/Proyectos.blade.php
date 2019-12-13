@@ -11,6 +11,7 @@
         <th>Fecha fin</th>
         <th>Horas estimadas</th>
         <th>Nombre del empleado</th>
+        <th>Empleados que colaboran</th>
       </tr>
       @foreach ($proyectos as $proyecto)
       <tr>
@@ -20,6 +21,11 @@
         <td>{{$proyecto->fechainicio}}</td>
         <td>{{$proyecto->fechafin}}</td>
         <td>{{$proyecto->horasestimadas}}</td>
+        <td>
+      @foreach($proyecto->empleados as $empleado)
+        <a href="{{route('empleados.show', $empleado->id)}}">{{$empleado->id}}</a>
+      @endforeach
+    </td>
         <td><a href="{{route('empleados.show', $proyecto->empleado_id)}}">{{$proyecto->empleado_id}}</td>
         <td><form action="{{route('proyectos.edit', $proyecto->id)}}" method="get">
         @csrf

@@ -13,6 +13,11 @@
         <li>Fecha fin: {{$proyecto->fechafin}}</li>
         <li>Horas estimadas: {{$proyecto->horasestimadas}}</li>
         <li>Id de empleado: {{$proyecto -> empleado_id}}</li>
+        <li>Empleados que colaboran: 
+        @foreach($proyecto->empleados as $empleado)
+                <a href="{{route('empleados.show', $empleado->id)}}">{{$empleado->id}}</a>
+            @endforeach
+        </li>
       </ul>
 
 
